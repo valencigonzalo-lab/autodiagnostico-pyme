@@ -5,7 +5,11 @@ const STORE_NAME = "autodiagnostico-responses";
 
 async function getResponseStore() {
   const { getStore } = await import("@netlify/blobs");
-  return getStore(STORE_NAME);
+  return getStore(STORE_NAME, {
+    siteID: process.env.NETLIFY_SITE_ID,
+    token: process.env.NETLIFY_BLOBS_TOKEN
+  });
+};
 }
 
 function json(statusCode, body) {
