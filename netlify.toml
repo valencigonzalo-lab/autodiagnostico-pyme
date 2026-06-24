@@ -1,3 +1,7 @@
+[functions]
+  node_bundler = "esbuild"
+  external_node_modules = ["@netlify/blobs"]
+  
 [build]
   publish = "public"
   functions = "netlify/functions"
