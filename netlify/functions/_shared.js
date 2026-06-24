@@ -4,7 +4,7 @@ const ADMIN_PIN = process.env.ADMIN_PIN || "2026";
 const STORE_NAME = "autodiagnostico-responses";
 
 async function getResponseStore() {
-  const { getStore } = require("@netlify/blobs");
+  const { getStore } = await import("@netlify/blobs");
   return getStore(STORE_NAME);
 }
 
