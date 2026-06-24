@@ -1,0 +1,16 @@
+{
+  "name": "autodiagnostico-transformacion-digital-pymes",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Encuesta en vivo para capacitaciones sobre transformación digital en PyMEs",
+  "scripts": {
+    "start": "node server.js",
+    "build": "node -e \"console.log('Sitio estático listo para Netlify')\""
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@netlify/blobs": "^9.1.0"
+  }
+}

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#147d79">
+  <title>Autodiagnóstico | Cultura digital, talento y transformación</title>
+  <link rel="stylesheet" href="/styles.css?v=5">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="brand-mark">TD</div>
+      <div>Autodiagnóstico PyME <small>Cultura, talento y transformación digital</small></div>
+    </div>
+    <span class="header-note privacy-note">Tus resultados aparecen al finalizar</span>
+  </header>
+
+  <main class="container">
+    <section id="welcome" class="hero">
+      <span class="eyebrow">Diagnóstico interactivo</span>
+      <h1>Cultura digital, talento, colaboración y transformación digital en PyMEs.</h1>
+      <p class="lead">Una mirada práctica para identificar el punto de partida de tu empresa y su predisposición para cambiar, mejorar y adoptar nuevas formas de trabajo.</p>
+      <div class="card intro-card">
+        <div class="meta-row">
+          <div class="meta-item"><strong>22</strong><span>preguntas breves</span></div>
+          <div class="meta-item"><strong>5–7</strong><span>minutos estimados</span></div>
+          <div class="meta-item"><strong>Inmediato</strong><span>resultado personal</span></div>
+        </div>
+        <div class="form-grid">
+          <div class="field">
+            <label for="name">Nombre <span class="privacy-note">(opcional)</span></label>
+            <input id="name" autocomplete="name" placeholder="Tu nombre">
+          </div>
+          <div class="field">
+            <label for="company">Empresa <span class="privacy-note">(opcional)</span></label>
+            <input id="company" autocomplete="organization" placeholder="Nombre de la empresa">
+          </div>
+          <div class="field">
+            <label for="role">Rol <span class="privacy-note">(opcional)</span></label>
+            <input id="role" autocomplete="organization-title" placeholder="Tu función">
+          </div>
+        </div>
+        <p class="privacy-note">Podés participar de forma anónima. Los datos se mostrarán de manera agregada durante la capacitación.</p>
+        <button id="startButton" class="btn">Comenzar diagnóstico <span>→</span></button>
+      </div>
+    </section>
+
+    <form id="survey" class="survey-shell hidden" novalidate>
+      <div class="survey-top">
+        <div class="progress-line"><span id="progressBar"></span></div>
+        <div class="progress-copy"><span id="progressText">0 de 22 respondidas</span><span>Guardamos tu avance en este dispositivo</span></div>
+      </div>
+      <div id="questionSections"></div>
+      <section class="card section-card">
+        <div class="section-heading">
+          <span class="section-number">5</span>
+          <div><h2>Preguntas finales de percepción</h2><p>Dos preguntas para ubicar a tu empresa en una matriz simple de madurez digital y predisposición al cambio.</p></div>
+        </div>
+        <div id="finalQuestions"></div>
+        <div class="actions submit-row">
+          <span class="privacy-note">Al enviar, verás tu devolución personal.</span>
+          <button class="btn" type="submit">Ver mi resultado <span>→</span></button>
+        </div>
+        <p id="formError" class="error hidden" role="alert"></p>
+      </section>
+    </form>
+
+    <section id="result" class="hidden"></section>
+  </main>
+  <footer class="footer">“La transformación digital no empieza por la tecnología. Empieza por cómo la empresa aprende, colabora, gestiona personas y se anima a cambiar.”</footer>
+  <script src="/survey.js?v=5"></script>
+</body>
+</html>

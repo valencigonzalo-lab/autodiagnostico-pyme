@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#147d79">
+  <title>Panel en vivo | Autodiagnóstico PyME</title>
+  <link rel="stylesheet" href="/styles.css?v=5">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand">
+      <div class="brand-mark">TD</div>
+      <div>Autodiagnóstico PyME <small>Panel de resultados agregados</small></div>
+    </div>
+    <a href="/" class="btn ghost">Ver encuesta</a>
+  </header>
+
+  <main class="wide">
+    <section id="login" class="card admin-login">
+      <span class="eyebrow">Acceso privado</span>
+      <h2 style="margin-top:16px">Ingresá al panel en vivo</h2>
+      <p class="privacy-note">Usá el PIN de administración configurado para esta capacitación.</p>
+      <form id="loginForm">
+        <div class="field">
+          <label for="pin">PIN de administración</label>
+          <input id="pin" type="password" inputmode="numeric" autocomplete="current-password" required>
+        </div>
+        <button class="btn" style="width:100%;margin-top:14px">Ingresar</button>
+        <p id="loginError" class="error hidden"></p>
+      </form>
+    </section>
+
+    <section id="dashboard" class="hidden">
+      <div class="admin-header">
+        <div><span class="live-pill">Actualización automática</span><h1>La foto del grupo</h1></div>
+        <div class="actions">
+          <button id="fullscreen" class="btn secondary">Presentar</button>
+          <button id="export" class="btn ghost">Descargar datos</button>
+          <button id="reset" class="btn danger">Borrar respuestas</button>
+        </div>
+      </div>
+      <div class="kpi-grid">
+        <div class="card kpi"><span>Participantes</span><strong id="answered">0</strong></div>
+        <div class="card kpi"><span>Promedio grupal</span><strong><span id="averageScore">0</span><small>/5</small></strong></div>
+        <div class="card kpi"><span>Avance percibido</span><strong><span id="averageAdvance">0</span><small>/5</small></strong></div>
+        <div class="card kpi"><span>Predisposición</span><strong><span id="averagePredisposition">0</span><small>/5</small></strong></div>
+      </div>
+      <div class="kpi-grid insight-grid">
+        <div class="card kpi"><span>Dimensión más fuerte</span><strong id="strongestDimension">—</strong></div>
+        <div class="card kpi"><span>Dimensión más débil</span><strong id="weakestDimension">—</strong></div>
+        <div class="card kpi"><span>Alta predisposición</span><strong id="highPredisposition">0%</strong></div>
+        <div class="card kpi"><span>Bajo avance + alta predisposición</span><strong id="preparedOpportunity">0%</strong></div>
+      </div>
+      <div class="dashboard-grid">
+        <section class="card dash-card">
+          <h3>Cuadrantes del grupo</h3>
+          <div id="quadrants" class="profile-list"></div>
+        </section>
+        <section class="card dash-card">
+          <h3>Niveles generales</h3>
+          <div id="levels"></div>
+        </section>
+        <section class="card dash-card">
+          <h3>Promedio por dimensión</h3>
+          <div id="dimensions"></div>
+        </section>
+        <section class="card dash-card">
+          <h3>Promedio por afirmación</h3>
+          <div id="questions"></div>
+        </section>
+      </div>
+      <div class="dashboard-grid">
+        <section class="card dash-card">
+          <h3>Percepción del avance digital</h3>
+          <div id="advance"></div>
+        </section>
+        <section class="card dash-card">
+          <h3>Predisposición para los próximos 12 meses</h3>
+          <div id="predisposition"></div>
+        </section>
+      </div>
+      <section class="card dash-card" style="margin:16px 0 60px">
+        <h3>Últimas participaciones</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Hora</th><th>Empresa</th><th>Promedio</th><th>Nivel</th><th>Cuadrante</th></tr></thead>
+            <tbody id="latest"></tbody>
+          </table>
+        </div>
+      </section>
+    </section>
+  </main>
+  <script src="/admin.js?v=5"></script>
+</body>
+</html>

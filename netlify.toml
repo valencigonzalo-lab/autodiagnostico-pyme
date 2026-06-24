@@ -1,0 +1,31 @@
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[[redirects]]
+  from = "/api/responses"
+  to = "/.netlify/functions/responses"
+  status = 200
+
+[[redirects]]
+  from = "/api/results/:id"
+  to = "/.netlify/functions/result?id=:id"
+  status = 200
+
+[[redirects]]
+  from = "/api/admin/summary"
+  to = "/.netlify/functions/admin-summary"
+  status = 200
+
+[[redirects]]
+  from = "/api/admin/export"
+  to = "/.netlify/functions/admin-export"
+  status = 200
+
+[[redirects]]
+  from = "/api/admin/responses"
+  to = "/.netlify/functions/admin-responses"
+  status = 200
